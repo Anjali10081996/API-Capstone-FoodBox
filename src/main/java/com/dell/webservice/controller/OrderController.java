@@ -68,7 +68,7 @@ public class OrderController {
 	}
 	
 	@PostMapping("/addorder")
-	public ResponseEntity<?> addOrder(@RequestBody(required = true) Order addOrder){
+	public ResponseEntity<?> addOrder(@RequestBody(required = false) Order addOrder){
 		if(addOrder == null) {
 			return new ResponseEntity<String>("Add Order request body cannot be empty", new HttpHeaders(), HttpStatus.BAD_REQUEST);
 		}
@@ -82,7 +82,7 @@ public class OrderController {
 	}
 	
 	@PutMapping("/updateorder/{orderId}")
-	public ResponseEntity<?> updateOrder(@PathVariable("orderId") int id, @RequestBody(required = true) Order updateOrder,@RequestParam(required = false) String userName) {
+	public ResponseEntity<?> updateOrder(@PathVariable("orderId") int id, @RequestBody(required = false) Order updateOrder,@RequestParam(required = false) String userName) {
 		if(updateOrder == null) {
 			return new ResponseEntity<String>("Update Order request body cannot be empty",new HttpHeaders(), HttpStatus.BAD_REQUEST);
 		}

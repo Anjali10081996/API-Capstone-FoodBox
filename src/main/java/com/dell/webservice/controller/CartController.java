@@ -67,7 +67,7 @@ public class CartController {
 	}
 	
 	@PostMapping("/addcart")
-	public ResponseEntity<?> addCart(@RequestBody(required = true) Cart addCart){
+	public ResponseEntity<?> addCart(@RequestBody(required = false) Cart addCart){
 		if(addCart == null) {
 			return new ResponseEntity<String>("Add Cart request body cannot be empty", new HttpHeaders(), HttpStatus.BAD_REQUEST);
 		}
@@ -82,7 +82,7 @@ public class CartController {
 	}
 	
 	@PutMapping("/updatecart/{cartId}")
-	public ResponseEntity<?> updateCart(@PathVariable("cartId") int id, @RequestBody(required = true) Cart updateCart) {
+	public ResponseEntity<?> updateCart(@PathVariable("cartId") int id, @RequestBody(required = false) Cart updateCart) {
 		if(updateCart == null) {
 			return new ResponseEntity<String>("Update Cart request body cannot be empty",new HttpHeaders(), HttpStatus.BAD_REQUEST);
 		}
