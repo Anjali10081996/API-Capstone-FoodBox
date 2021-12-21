@@ -34,7 +34,7 @@ pipeline {
             steps {
                 echo '----------------- This is a build docker image phase ----------'
                 sh '''
-                    docker image build -t java-fsd-capstone-assessment-foodbox-0.0.1-snapshot .
+                    docker image build -t foodbox-webservice .
                 '''
             }
         }
@@ -43,13 +43,13 @@ pipeline {
             steps {
                 echo '----------------- This is a docker deployment phase ----------'
                 sh '''
-                 (if  [ $(docker ps -a | grep java-fsd-capstone-assessment-foodbox-0.0.1-snapshot | cut -d " " -f1) ]; then \
-                        echo $(docker rm -f java-fsd-capstone-assessment-foodbox-0.0.1-snapshot); \
-                        echo "---------------- successfully removed java-fsd-capstone-assessment-foodbox-0.0.1-snapshot ----------------"
+                 (if  [ $(docker ps -a | grep foodbox-webservice | cut -d " " -f1) ]; then \
+                        echo $(docker rm -f foodbox-webservice); \
+                        echo "---------------- successfully removed foodbox-webservice ----------------"
                      else \
                     echo OK; \
                  fi;);
-            docker container run --restart always --name java-fsd-capstone-assessment-foodbox-0.0.1-snapshot -p 8083:8083 -d java-fsd-capstone-assessment-foodbox-0.0.1-snapshot
+            docker container run --restart always --name foodbox-webservice -p 8083:8083 -d foodbox-webservice
             '''
             }
         }
