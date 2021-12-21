@@ -10,7 +10,7 @@ public class CuisinePageTest {
 	
 	String driverPath = "C:\\Users\\pandaa7\\BrowserDriver\\chromedriver.exe";
 	ChromeDriver driver;
-	String baseUrl = "http://localhost:4200/";
+	String baseUrl = "http://foodbox-capstone.s3-website.us-east-2.amazonaws.com/";
 	
 	@Test
 	void testCuisineUrl() {

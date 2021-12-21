@@ -18,12 +18,10 @@ public class HomePageTest {
 
 	@Test
 	void testHomepageSoruceUrl() {
-		String siteUrl = "http://localhost:4200/signup";
+		String siteUrl = "http://foodbox-capstone.s3-website.us-east-2.amazonaws.com/home";
 		System.setProperty("webdriver.chrome.driver", driverPath);
 		driver = new ChromeDriver();
 		driver.get(siteUrl);
-		WebElement e = driver.findElementByXPath("/html/body/app-root/app-signup/div/form/div[1]/div/div/input");
-		e.sendKeys("alisha");
 		assertEquals(siteUrl, driver.getCurrentUrl());
 	}
 
