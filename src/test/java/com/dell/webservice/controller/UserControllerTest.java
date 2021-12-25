@@ -41,9 +41,9 @@ public class UserControllerTest {
 	@MockBean
 	private UserService userService;
 	
-	User user1 = new User("Tanuja","abcd","Tanuja.Lavu@dell.com","admin",10000.57,true);
-	User user2 = new User("Avilasa","pqr","Avilasa.Das@dell.com","admin",10000.57,true);
-	User user3 = new User("Alisha","mnb","Alisha.Panda@dell.com","admin",10000.57,true);
+	User user1 = new User("Somyaa","abcd","Somyaa@dell.com","admin",10000.57,true);
+	User user2 = new User("Yamini","pqr","Yamini@dell.com","admin",10000.57,true);
+	User user3 = new User("Anjali","mnb","Anjali@dell.com","admin",10000.57,true);
 	
 	@Test
 	public void getEntityUsers_withoutfilters_success()throws Exception {
@@ -59,7 +59,7 @@ public class UserControllerTest {
 		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
 		System.out.println("Get all users without filters");
 		System.out.println(result.getResponse().getContentAsString());
-		String expected = "[{\"id\":0,\"username\":\"Tanuja\",\"password\":\"abcd\",\"email\":\"Tanuja.Lavu@dell.com\",\"role\":\"admin\",\"walletBalance\":10000.57,\"loggedIn\":true},{\"id\":0,\"username\":\"Avilasa\",\"password\":\"pqr\",\"email\":\"Avilasa.Das@dell.com\",\"role\":\"admin\",\"walletBalance\":10000.57,\"loggedIn\":true},{\"id\":0,\"username\":\"Alisha\",\"password\":\"mnb\",\"email\":\"Alisha.Panda@dell.com\",\"role\":\"admin\",\"walletBalance\":10000.57,\"loggedIn\":true}]";
+		String expected = "[{\"id\":0,\"username\":\"Somyaa\",\"password\":\"abcd\",\"email\":\"Somyaa@dell.com\",\"role\":\"admin\",\"walletBalance\":10000.57,\"loggedIn\":true},{\"id\":0,\"username\":\"Yamini\",\"password\":\"pqr\",\"email\":\"Yamini@dell.com\",\"role\":\"admin\",\"walletBalance\":10000.57,\"loggedIn\":true},{\"id\":0,\"username\":\"Anjali\",\"password\":\"mnb\",\"email\":\"Anjali@dell.com\",\"role\":\"admin\",\"walletBalance\":10000.57,\"loggedIn\":true}]";
 		assertEquals(expected,result.getResponse().getContentAsString());
 		assertEquals(200,result.getResponse().getStatus());
 		
@@ -75,7 +75,7 @@ public class UserControllerTest {
 		System.out.println("get by id");
 		System.out.println(result.getResponse().getContentAsString());
 		assertEquals(200,result.getResponse().getStatus());
-		String expected = "{\"id\":0,\"username\":\"Tanuja\",\"password\":\"abcd\",\"email\":\"Tanuja.Lavu@dell.com\",\"role\":\"admin\",\"walletBalance\":10000.57,\"loggedIn\":true}";
+		String expected = "{\"id\":0,\"username\":\"Somyaa\",\"password\":\"abcd\",\"email\":\"Somyaa@dell.com\",\"role\":\"admin\",\"walletBalance\":10000.57,\"loggedIn\":true}";
 		assertEquals(expected,result.getResponse().getContentAsString());
 	}
 	
@@ -104,7 +104,7 @@ public class UserControllerTest {
 		System.out.println("add");
 		System.out.println(result.getResponse().getContentAsString());
 		assertEquals(201,result.getResponse().getStatus());
-		String expected = "{\"id\":0,\"username\":\"Avilasa\",\"password\":\"pqr\",\"email\":\"Avilasa.Das@dell.com\",\"role\":\"admin\",\"walletBalance\":10000.57,\"loggedIn\":true}";
+		String expected = "{\"id\":0,\"username\":\"Yamini\",\"password\":\"pqr\",\"email\":\"Yamini@dell.com\",\"role\":\"admin\",\"walletBalance\":10000.57,\"loggedIn\":true}";
 		assertEquals(expected,result.getResponse().getContentAsString());
 	}
 	

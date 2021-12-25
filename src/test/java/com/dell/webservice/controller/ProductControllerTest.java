@@ -42,10 +42,10 @@ public class ProductControllerTest {
 	
 	@MockBean
 	private UserService userService;
-	User user = new User("Alisha","mnb","Alisha.Panda@dell.com","admin",10000.57,true);
-	Product prod1 = new Product("Chicken Biryani",250.0,"250/- per plate","Mughlai","../../../assets/images/ChickenBiryani.jpg","../../../assets/images/Mughlai.jpg","Golden Spoon");
-	Product prod2 = new Product("Chicken Enchiladas",190.0,"190/- per plate","Mexican","../../../assets/images/Enchiladas.jpg","../../../assets/images/Mexican.jpg","Qdoba");
-	Product prod3 = new Product("Veg Farmhouse Pizza",200.0,"200/- per plate","Italian","../../../assets/images/VegPizza.jpg","../../../assets/images/Italian.jpg","Dominos");
+	User user = new User("Anjali","xyz","Anjali_Agrawal@dell.com","admin",10000.90,true);
+	Product prod1 = new Product("Paneer",250.0,"250/- per plate","Paneer","../../../assets/images/Paneer.jpg","../../../assets/images/Paneer.jpg","Muglai");
+	Product prod2 = new Product("Bruchette",190.0,"190/- per plate","Mexican","../../../assets/images/Bruchette.jpg","../../../assets/images/Mexican.jpg","Rome");
+	Product prod3 = new Product("Pasta",200.0,"200/- per plate","Italian","../../../assets/images/Pasta.jpg","../../../assets/images/Italian.jpg","Dominos");
 	
 	@Test
 	public void getEntityProducts_withoutfilters_success()throws Exception {
@@ -75,8 +75,7 @@ public class ProductControllerTest {
 		System.out.println("get by id");
 		System.out.println(result.getResponse().getContentAsString());
 		assertEquals(200,result.getResponse().getStatus());
-		//String expected = "{\"id\":0,\"name\":\"Chicken Biryani\",\"price\":250.0,\"description\":\"250/- per plate\",\"category\":\"Mughlai\",\"imagePath\":\"../../../assets/images/ChickenBiryani.jpg\",\"categoryImagePath\":\"../../../assets/images/Mughlai.jpg\",\"seller\":\"Golden Spoon\",\"createdAt\":\"2021-12-17T16:00:04.112+00:00\"}";
-		//assertEquals(expected,result.getResponse().getContentAsString());
+		
 	}
 	
 	@Test
@@ -104,8 +103,7 @@ public class ProductControllerTest {
 		System.out.println("add");
 		System.out.println(result.getResponse().getContentAsString());
 		assertEquals(201,result.getResponse().getStatus());
-		//String expected = "{\"id\":0,\"username\":\"Avilasa\",\"password\":\"pqr\",\"email\":\"Avilasa.Das@dell.com\",\"role\":\"admin\",\"walletBalance\":10000.57,\"loggedIn\":true}";
-		//assertEquals(expected,result.getResponse().getContentAsString());
+		
 	}
 	
 	@Test

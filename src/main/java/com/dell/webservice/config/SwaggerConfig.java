@@ -23,7 +23,7 @@ public class SwaggerConfig {
 	private ApiInfo metaDeta() {
 		ApiInfo apiInfo = new ApiInfo("Ecommerce Kitchen Story REST API ",
 				"Ecommerce Products REST API for online store Kitchen Story", "1.0.0", "Term of service as per user guide lines.", 
-				new Contact("Alisha Panda", "https://alisha.panda.com/about", "alisha.panda@dell.com"), 
+				new Contact("Anjali Agrawal", "https://Anjali_Agrawal.com/about", "Anjali_Agrawal@dell.com"), 
 				"Apache Lience Version 2.0", "https://www.apache.org/licenses/LICENSE-2.0.html");
 		return apiInfo;
 	}

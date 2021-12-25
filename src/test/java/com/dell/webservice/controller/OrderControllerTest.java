@@ -44,20 +44,19 @@ public class OrderControllerTest {
 	
 	@MockBean
 	private UserService userService;
-	User user = new User("Alisha","mnb","Alisha.Panda@dell.com","admin",10000.57,true);
-	Product prod1 = new Product("Chicken Biryani",250.0,"250/- per plate","Mughlai","../../../assets/images/ChickenBiryani.jpg","../../../assets/images/Mughlai.jpg","Golden Spoon");
-	Product prod2 = new Product("Chicken Enchiladas",190.0,"190/- per plate","Mexican","../../../assets/images/Enchiladas.jpg","../../../assets/images/Mexican.jpg","Qdoba");
-	Product prod3 = new Product("Veg Farmhouse Pizza",200.0,"200/- per plate","Italian","../../../assets/images/VegPizza.jpg","../../../assets/images/Italian.jpg","Dominos");
-	
+	User user = new User("Anjali","xyz","Anjali_Agrawal@dell.com","admin",10000.90,true);
+	Product prod1 = new Product("Paneer",250.0,"250/- per plate","Paneer","../../../assets/images/CPaneer.jpg","../../../assets/images/Paneer.jpg","Muglai");
+	Product prod2 = new Product("Bruchette",190.0,"190/- per plate","Mexican","../../../assets/images/Bruchette.jpg","../../../assets/images/Mexican.jpg","Rome");
+	Product prod3 = new Product("Pasta",200.0,"200/- per plate","Italian","../../../assets/images/Pasta.jpg","../../../assets/images/Italian.jpg","Dominos");
 	
 	@Test
 	public void getEntityProducts_withoutfilters_success()throws Exception {
 		List<Product> prodList = new ArrayList<>();
 		prodList.add(prod1);
 		prodList.add(prod2);
-		Order order1 = new Order(0.0,"abc@gmail.com","xyz apartment","9876543212",prodList,user);
+		Order order1 = new Order(0.0,"pqr@gmail.com","xyz apartment","2322342341",prodList,user);
 		prodList.add(prod3);
-		Order order2 = new Order(0.0,"abc@gmail.com","xyz apartment","9876543212",prodList,user);
+		Order order2 = new Order(0.0,"xyz@gmail.com","xyz apartment","934543545445",prodList,user);
 		List<Order> orderList = new ArrayList<>();
 		orderList.add(order1);
 		orderList.add(order2);

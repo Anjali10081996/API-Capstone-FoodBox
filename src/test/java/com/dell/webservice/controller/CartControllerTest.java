@@ -49,10 +49,10 @@ public class CartControllerTest {
 	
 	@MockBean
 	private UserService userService;
-	User user = new User("Alisha","mnb","Alisha.Panda@dell.com","admin",10000.57,true);
-	Product prod1 = new Product("Chicken Biryani",250.0,"250/- per plate","Mughlai","../../../assets/images/ChickenBiryani.jpg","../../../assets/images/Mughlai.jpg","Golden Spoon");
-	Product prod2 = new Product("Chicken Enchiladas",190.0,"190/- per plate","Mexican","../../../assets/images/Enchiladas.jpg","../../../assets/images/Mexican.jpg","Qdoba");
-	Product prod3 = new Product("Veg Farmhouse Pizza",200.0,"200/- per plate","Italian","../../../assets/images/VegPizza.jpg","../../../assets/images/Italian.jpg","Dominos");
+	User user = new User("Anjali","xyz","Anjali_Agrawal@dell.com","admin",10000.90,true);
+	Product prod1 = new Product("Paneer",250.0,"250/- per plate","Paneer","../../../assets/images/CPaneer.jpg","../../../assets/images/Paneer.jpg","Muglai");
+	Product prod2 = new Product("Bruchette",190.0,"190/- per plate","Mexican","../../../assets/images/Bruchette.jpg","../../../assets/images/Mexican.jpg","Rome");
+	Product prod3 = new Product("Pasta",200.0,"200/- per plate","Italian","../../../assets/images/Pasta.jpg","../../../assets/images/Italian.jpg","Dominos");
 	
 	
 	@Test
@@ -73,8 +73,6 @@ public class CartControllerTest {
 		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
 		System.out.println("Get all carts without filters");
 		System.out.println(result.getResponse().getContentAsString());
-		//String expected = "[{\"id\":0,\"name\":\"Chicken Biryani\",\"price\":250.0,\"description\":\"250/- per plate\",\"category\":\"Mughlai\",\"imagePath\":\"../../../assets/images/ChickenBiryani.jpg\",\"categoryImagePath\":\"../../../assets/images/Mughlai.jpg\",\"seller\":\"Golden Spoon\",\"createdAt\":\"2021-12-17T15:57:06.520+00:00\"}]";
-		//assertEquals(expected,result.getResponse().getContentAsString());
 		assertEquals(200,result.getResponse().getStatus());
 		
 	}
